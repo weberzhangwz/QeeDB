@@ -1,0 +1,53 @@
+{
+  "name": "qeedb",
+  "version": "1.0.0",
+  "description": "QeeDB —— 面向 MySQL 的 ThinkORM 风格 ORM（Node.js ≥ 18），Adapter/Builder 分层，预留多数据库扩展",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "src",
+    "dist",
+    "types",
+    "README.md",
+    "CHANGELOG.md",
+    "docs"
+  ],
+  "scripts": {
+    "build": "node build.js",
+    "prepack": "npm run build",
+    "test": "node --test test/unit/*.test.js test/integration/*.test.js",
+    "test:unit": "node --test test/unit/*.test.js",
+    "test:integration": "node --test test/integration/*.test.js",
+    "typecheck": "tsc --noEmit --skipLibCheck types/index.d.ts",
+    "example": "node examples/basic.js",
+    "coverage": "c8 --reporter=text-summary --check-coverage --lines 80 node --test test/unit/*.test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "mysql2": "^3.11.0"
+  },
+  "devDependencies": {
+    "c8": "^12.0.0",
+    "esbuild": "^0.24.0",
+    "typescript": "^7.0.2"
+  },
+  "keywords": [
+    "orm",
+    "mysql",
+    "thinkorm",
+    "query-builder",
+    "activerecord"
+  ],
+  "license": "MIT"
+}

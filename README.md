@@ -402,5 +402,3 @@ npm run coverage         # c8 覆盖率（行覆盖门槛 80%）
 ## License
 
 MIT
-
-> （注：部分内容由豆包 AI 生成）
